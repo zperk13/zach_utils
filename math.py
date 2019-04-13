@@ -51,14 +51,14 @@ def is_prime(number, progress_bar=False):
             for x in trange(1, int(number + 1 / 2 + 3)):
                 if number % x == 0:
                     factors.append(x)
-                if len(factors) > 3:
+                if len(factors) > 2:
                     return False
             return True
         else:
             for x in range(1, int(number + 1 / 2 + 3)):
                 if number % x == 0:
                     factors.append(x)
-                if len(factors) > 3:
+                if len(factors) > 2:
                     return False
             return True
 
@@ -66,7 +66,7 @@ def is_prime(number, progress_bar=False):
 def help_is_prime(factors):
     # If you have already calculated the factors and saved it in a variable,
     # you can put the give it to this function so you don't have to do unnecessary calculation
-    if len(factors) <= 3:
+    if len(factors) < 3:
         return True
     else:
         return False
