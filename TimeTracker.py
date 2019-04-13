@@ -3,11 +3,11 @@ from time import time
 
 class TimeTracker(object):
     def __init__(self):
-        global start_time
-        start_time = time()
+        global TimeTracker_start_time
+        TimeTracker_start_time = time()
 
     def stop():
-        return(time() - start_time)
+        return (time() - TimeTracker_start_time)
 
 
 # How to use:
