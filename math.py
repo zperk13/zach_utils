@@ -132,51 +132,47 @@ def list_primes(max, progess_bar=False):
     return primes
 
 
-def gen_fibonacci_steps(steps):
-    # Generates the first {steps} fibonacci numbers
-    one_ago = 1
-    two_ago = 1
-    now = one_ago + two_ago
-    yield 1
-    yield 1
-    for _ in range(steps - 2):
-        yield now
-        two_ago = one_ago
-        one_ago = now
-        now = one_ago + two_ago
-
-
-def gen_fibonacci_max(max):
-    # Generates all the fibonacci numbers up to max (uninclusive)
-    one_ago = 1
-    two_ago = 1
-    now = one_ago + two_ago
-    yield 1
-    yield 1
-    while now < max:
-        yield now
-        two_ago = one_ago
-        one_ago = now
-        now = one_ago + two_ago
-
-
-def list_fibonacci_steps(steps):
-    # Generates a list of the first {steps} fibonacci numbers
-    return_list = []
-    for num in gen_fibonacci_steps(steps):
-        return_list.append(num)
-    return return_list
-
-
-def list_fibonacci_max(max):
-    # Returns a list of  all the fibonacci numbers up to max (uninclusive)
-    return_list = []
-    for num in gen_fibonacci_steps(max):
-        return_list.append(num)
-    return return_list
-
-
 class fibonacci(object):
+    def gen_fibonacci_steps(steps):
+        # Generates the first {steps} fibonacci numbers
+        one_ago = 1
+        two_ago = 1
+        now = one_ago + two_ago
+        yield 1
+        yield 1
+        for _ in range(steps - 2):
+            yield now
+            two_ago = one_ago
+            one_ago = now
+            now = one_ago + two_ago
+
+    def gen_fibonacci_max(max):
+        # Generates all the fibonacci numbers up to max (uninclusive)
+        one_ago = 1
+        two_ago = 1
+        now = one_ago + two_ago
+        yield 1
+        yield 1
+        while now < max:
+            yield now
+            two_ago = one_ago
+            one_ago = now
+            now = one_ago + two_ago
+
+    def list_fibonacci_steps(steps):
+        # Generates a list of the first {steps} fibonacci numbers
+        return_list = []
+        for num in gen_fibonacci_steps(steps):
+            return_list.append(num)
+        return return_list
+
+    def list_fibonacci_max(max):
+        # Returns a list of  all the fibonacci numbers up to max (uninclusive)
+        return_list = []
+        for num in gen_fibonacci_steps(max):
+            return_list.append(num)
+        return return_list
+
     def custom_gen_fibonacci_steps(num1, num2, steps):
         # Generates numbers with fibonacci rules, but with any numbers you want instead of 1 and 2
         # It will generate the first {steps} numbers
