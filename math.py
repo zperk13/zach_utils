@@ -130,3 +130,27 @@ def list_primes(max, progess_bar=False):
             if is_prime(x):
                 primes.append(x)
     return primes
+
+
+def get_binary_info(base10number):
+    python_binary = bin(base10number)
+    string_binary = python_binary[2:]
+    string_len = len(string_binary)
+    if string_len < 5:
+        pad_binary = ('0' * (4 - string_len)) + string_binary
+    elif string_len < 9:
+        pad_binary = ('0' * (8 - string_len)) + string_binary
+    elif string_len < 17:
+        pad_binary = ('0' * (16 - string_len)) + string_binary
+    elif string_len < 33:
+        pad_binary = ('0' * (32 - string_len)) + string_binary
+    elif string_len < 65:
+        pad_binary = ('0' * (64 - string_len)) + string_binary
+    else:
+        pad_binary = 'Over 64 bits not coded'
+    print('Base 10 Number:', base10number)
+    print('Binary:', string_binary)
+    print('Bits:', string_len)
+    print('Formatted:', pad_binary)
+    print('Formatted Bits:', len(pad_binary))
+    print('Formatted Bytes', int(len(pad_binary) / 8))
