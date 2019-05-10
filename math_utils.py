@@ -154,3 +154,19 @@ def get_binary_info(base10number):
     print('Formatted:', pad_binary)
     print('Formatted Bits:', len(pad_binary))
     print('Formatted Bytes', int(len(pad_binary) / 8))
+
+
+# least common multiple
+def lcm(*args):
+    if len(args) == 1:
+        args = args[0]
+    least_commom_multiplier = max(args)
+    while True:
+        is_it = True
+        for num in args:
+            if least_commom_multiplier % num != 0:
+                is_it = False
+        if is_it:
+            return least_commom_multiplier
+        else:
+            least_commom_multiplier += 1
