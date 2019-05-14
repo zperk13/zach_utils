@@ -170,3 +170,26 @@ def lcm(*args):
             return least_commom_multiplier
         else:
             least_commom_multiplier += 1
+
+
+def median(*args):
+    if len(args) == 1:
+        args = args[0]
+    for x in args:
+        if not (isinstance(x, int) or isinstance(x, float)):
+            raise TypeError(f'All values must be integers or floats. Found {x}')
+    args = sorted(args)
+    length = len(args)
+    if is_even(length):
+        return (args[int(length / 2 - 1)] + args[int(length / 2)]) / 2
+    else:
+        return args[int(length / 2 - 0.5)]
+
+
+def Range(*args):
+    if len(args) == 1:
+        args = args[0]
+    for x in args:
+        if not (isinstance(x, int) or isinstance(x, float)):
+            raise TypeError(f'All values must be integers or floats. Found {x}')
+    return max(args) - min(args)
