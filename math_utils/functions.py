@@ -3,14 +3,7 @@ from tqdm import trange
 
 def is_even(integer):
     # Returns True if integer given is even, else it will return False
-    if isinstance(integer, int):
-        # Checks if integer is divisible by 2
-        if integer % 2 == 0:
-            return True
-        else:
-            return False
-    else:
-        raise TypeError('integer must be an integer')
+    return integer % 2 == 0
 
 
 def is_odd(integer):
